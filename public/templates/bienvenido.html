@@ -1,8 +1,78 @@
 <div id="message">
-      <h1>Bienvenidos a Trivia KPMG</h1>
-      <p>Seleccionar "QUE COMIENZE EL RETO" para iniciar la trivia.</p>
-      <span>Recuerda que para volver salir de la trivia solo tienes que deslizar la pantalla. Suerte!!!</span>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Que comienze el reto</a></li>
-      </ul>
-    </div>  
+	<center>
+	  <h2>Bienvenidos a Trivia KPMG</h2>
+	  <h4>Seleccionar "QUE COMIENZE EL RETO" para iniciar la trivia.</h4>
+	  <h4>Recuerda que para volver salir de la trivia solo tienes que deslizar la pantalla. Suerte!!!</h4>
+	  <br>
+	  <!--
+	  <a class="waves-effect waves-light btn-large {{classAnimate}} blue darken-3">
+	  <i class="material-icons left">cloud</i>Que comienze el reto !</a> -->
+	  
+      <a class="waves-effect waves-light btn modal-trigger blue darken-3 {{classAnimate}}" style="height:100%;-webkit-animation-iteration-count: infinite;" href="#modal1">
+      <h3>Que comienze el reto</h3></a>
+	  		
+	</center>
+	<br>
+	<h4>TOP 5</h4>
+	<table>
+        <thead>
+          <tr>
+              <th data-field="id">Nombre</th>
+              <th data-field="name">Puntaje</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>17</td>
+          </tr>
+        </tbody>
+      </table>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <label class="right" style="font-size:2em;">Puntaje: 0/10</label><br><br>
+      <h3>Enunciado de la primera pregunta</h3>
+      <h4>Indicaciones</h4>
+  	  <div class="divider"></div>
+       <p>
+	      <input name="group1" type="radio" id="test1" />
+	      <label style="font-size:2em;" for="test1">Opción 1</label>
+	    </p>
+	    <p>
+	      <input name="group1" type="radio" id="test2" />
+	      <label style="font-size:2em;" for="test2">Opción 2</label>
+	    </p>
+	    <p>
+	      <input class="with-gap" name="group1" type="radio" id="test3"  />
+	      <label style="font-size:2em;" for="test3">Opción 3</label>
+	    </p>
+	      <p>
+	        <input name="group1" type="radio" id="test4" />
+	        <label style="font-size:2em;" for="test4">Opción 4</label>
+	    </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"><h4>Aceptar</h4></a>
+    </div>
+  </div>
+  	
+</div>
+<div class="carousel carousel-slider">
+  <a class="carousel-item" href="#one!"><img style="width:100%;" src="img/footer/footer_1.png"></a>
+  <a class="carousel-item" href="#two!"><img style="width:100%;" src="img/footer/footer_2.png"></a>
+  <a class="carousel-item" href="#three!"><img style="width:100%;" src="img/footer/footer_3.png"></a>
+  <a class="carousel-item" href="#four!"><img style="width:100%;" src="img/footer/footer_4.png"></a>
+</div>
+<div>
+	<img style="width:100%;" src="img/footer/banner_morado.png">
+</div>   
