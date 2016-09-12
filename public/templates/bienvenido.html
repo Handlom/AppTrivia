@@ -7,65 +7,309 @@
 	  <!--
 	  <a class="waves-effect waves-light btn-large {{classAnimate}} blue darken-3">
 	  <i class="material-icons left">cloud</i>Que comienze el reto !</a> -->
-	  
-      <a class="waves-effect waves-light btn modal-trigger blue darken-3 {{classAnimate}}" style="height:100%;-webkit-animation-iteration-count: infinite;" href="#modal1">
-      <h3>Que comienze el reto</h3></a>
+	   <!-- Modal Trigger -->
+      <button ng-click="irP1()" class="waves-effect waves-light btn modal-trigger blue darken-3 {{classAnimate}}" style="height:100%;-webkit-animation-iteration-count: infinite;" href="#modal1">
+      <h3>Que comienze el reto</h3></button>
 	  		
 	</center>
 	<br>
-	<h4>TOP 5</h4>
-	<table>
-        <thead>
-          <tr>
-              <th data-field="id">Nombre</th>
-              <th data-field="name">Puntaje</th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>20</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>18</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>17</td>
-          </tr>
-        </tbody>
-      </table>
 
   <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <div id="modal1" class="modal {{stl}}" ng-class="{{stl}}">
     <div class="modal-content">
-      <label class="right" style="font-size:2em;">Puntaje: 0/10</label><br><br>
-      <h3>Enunciado de la primera pregunta</h3>
-      <h4>Indicaciones</h4>
-  	  <div class="divider"></div>
-       <p>
-	      <input name="altPregunta1" ng-model="altPregunta1" value="opcion1" type="radio" id="test1" />
-	      <label style="font-size:2em;" for="test1">Opción 1</label>
-	    </p>
-	    <p>
-	      <input name="altPregunta1" ng-model="altPregunta1" value="opcion2" type="radio" id="test2" />
-	      <label style="font-size:2em;" for="test2">Opción 2</label>
-	    </p>
-	    <p>
-	      <input name="altPregunta1" ng-model="altPregunta1" value="opcion3" type="radio" id="test3"  />
-	      <label style="font-size:2em;" for="test3">Opción 3</label>
-	    </p>
-	      <p>
-	        <input name="altPregunta1" ng-model="altPregunta1" value="opcion4" type="radio" id="test4" />
-	        <label style="font-size:2em;" for="test4">Opción 4</label>
-	    </p>
+      <h4>Pregunta 1</h4>
+      <button ng-click="activar()">Activar</button>
+      <p>Encunciado de la pregunta 1, {{stl}}</p>
+      <form>
+        <p>
+          <input value="a" ng-model="p1" name="p1" type="radio" id="p1o1" />
+          <label style="font-size: 1em;" for="p1o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="b" ng-model="p1" name="p1" type="radio" id="p1o2" />
+          <label style="font-size: 1em;" for="p1o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="c" ng-model="p1" name="p1" type="radio" id="p1o3"  />
+          <label style="font-size: 1em;" for="p1o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="d" ng-model="p1" name="p1" type="radio" id="p1o4"  />
+          <label style="font-size: 1em;" for="p1o4">Opción 4</label>
+        </p>
+      </form>        
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="enviarp1(altPregunta1)" ><h4>Aceptar</h4></a>
+      <button type="submit" ng-click="irPe1(p1)" class="modal-action waves-effect waves-green btn-flat">Aceptar</button>
     </div>
   </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Modal 2</h4>
+      <p>Encunciado de la pregunta 2</p>
+      <form action="#">
+        <p>
+          <input value="p2o1" ng-model="p2o1" name="o1" type="radio" id="p2o1" />
+          <label style="font-size: 1em;" for="p2o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p2o2" ng-model="p2o2" name="o2" type="radio" id="p2o2" />
+          <label style="font-size: 1em;" for="p2o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p2o3" ng-model="p2o3" name="o3" type="radio" id="p2o3"  />
+          <label style="font-size: 1em;" for="p2o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p2o4" ng-model="p2o4" name="o4" type="radio" id="p2o4"  />
+          <label style="font-size: 1em;" for="p2o4">Opción 4</label>
+        </p>
+      </form> 
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP3()" class=" modal-action waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <h4>Modal 3</h4>
+      <p>Encunciado de la pregunta 3</p>
+      <form action="#">
+        <p>
+          <input value="p3o1" ng-model="p3o1" name="o1" type="radio" id="p3o1" />
+          <label style="font-size: 1em;" for="p3o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p3o2" ng-model="p3o2" name="o2" type="radio" id="p3o2" />
+          <label style="font-size: 1em;" for="p3o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p3o3" ng-model="p3o3" name="o3" type="radio" id="p3o3"  />
+          <label style="font-size: 1em;" for="p3o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p3o4" ng-model="p3o4" name="o4" type="radio" id="p3o4"  />
+          <label style="font-size: 1em;" for="p3o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP4()" class=" modal-action waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <h4>Modal 4</h4>
+      <p>Encunciado de la pregunta 4</p>
+      <form action="#">
+        <p>
+          <input value="p4o1" ng-model="p4o1" name="o1" type="radio" id="p4o1" />
+          <label style="font-size: 1em;" for="p4o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p4o2" ng-model="p4o2" name="o2" type="radio" id="p4o2" />
+          <label style="font-size: 1em;" for="p4o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p4o3" ng-model="p4o3" name="o3" type="radio" id="p4o3"  />
+          <label style="font-size: 1em;" for="p4o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p4o4" ng-model="p4o4" name="o4" type="radio" id="p4o4"  />
+          <label style="font-size: 1em;" for="p4o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP5()" class=" modal-action waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Modal 5</h4>
+      <p>Encunciado de la pregunta 5</p>
+      <form action="#">
+        <p>
+          <input value="p5o1" ng-model="p5o1" name="o1" type="radio" id="p5o1" />
+          <label style="font-size: 1em;" for="p5o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p5o2" ng-model="p5o2" name="o2" type="radio" id="p5o2" />
+          <label style="font-size: 1em;" for="p5o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p5o3" ng-model="p5o3" name="o3" type="radio" id="p5o3"  />
+          <label style="font-size: 1em;" for="p5o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p5o4" ng-model="p5o4" name="o4" type="radio" id="p5o4"  />
+          <label style="font-size: 1em;" for="p5o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP6()" class=" modal-action waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <h4>Modal 6</h4>
+      <p>Encunciado de la pregunta 6</p>
+      <form action="#">
+        <p>
+          <input value="p6o1" ng-model="p6o1" name="o1" type="radio" id="p6o1" />
+          <label style="font-size: 1em;" for="p6o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p6o2" ng-model="p6o2" name="o2" type="radio" id="p6o2" />
+          <label style="font-size: 1em;" for="p6o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p6o3" ng-model="p6o3" name="o3" type="radio" id="p6o3"  />
+          <label style="font-size: 1em;" for="p6o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p6o4" ng-model="p6o4" name="o4" type="radio" id="p6o4"  />
+          <label style="font-size: 1em;" for="p6o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP7()" class=" modal-action waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <h4>Modal 7</h4>
+      <p>Encunciado de la pregunta 7</p>
+      <form action="#">
+        <p>
+          <input value="p7o1" ng-model="p7o1" name="o1" type="radio" id="p7o1" />
+          <label style="font-size: 1em;" for="p7o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p7o2" ng-model="p7o2" name="o2" type="radio" id="p7o2" />
+          <label style="font-size: 1em;" for="p7o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p7o3" ng-model="p7o3" name="o3" type="radio" id="p7o3"  />
+          <label style="font-size: 1em;" for="p7o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p7o4" ng-model="p7o4" name="o4" type="radio" id="p7o4"  />
+          <label style="font-size: 1em;" for="p7o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP8()" class=" modal-action waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <h4>Modal 8</h4>
+      <p>Encunciado de la pregunta 8</p>
+      <form action="#">
+        <p>
+          <input value="p8o1" ng-model="p8o1" name="o1" type="radio" id="p8o1" />
+          <label style="font-size: 1em;" for="p8o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p8o2" ng-model="p8o2" name="o2" type="radio" id="p8o2" />
+          <label style="font-size: 1em;" for="p8o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p8o3" ng-model="p8o3" name="o3" type="radio" id="p8o3"  />
+          <label style="font-size: 1em;" for="p8o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p8o4" ng-model="p8o4" name="o4" type="radio" id="p8o4"  />
+          <label style="font-size: 1em;" for="p8o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP9()" class=" modal-action waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <h4>Modal 9</h4>
+      <p>Encunciado de la pregunta 9</p>
+      <form action="#">
+        <p>
+          <input value="p9o1" ng-model="p9o1" name="o1" type="radio" id="p9o1" />
+          <label style="font-size: 1em;" for="p9o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p9o2" ng-model="p9o2" name="o2" type="radio" id="p9o2" />
+          <label style="font-size: 1em;" for="p9o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p9o3" ng-model="p9o3" name="o3" type="radio" id="p9o3"  />
+          <label style="font-size: 1em;" for="p9o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p9o4" ng-model="p9o4" name="o4" type="radio" id="p9o4"  />
+          <label style="font-size: 1em;" for="p9o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irP10()" class=" modal-action  waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modal10" class="modal">
+    <div class="modal-content">
+      <h4>Modal 10</h4>
+      <p>Encunciado de la pregunta 10</p>
+      <form action="#">
+        <p>
+          <input value="p10o1" ng-model="p10o1" name="o1" type="radio" id="p10o1" />
+          <label style="font-size: 1em;" for="p10o1">Opción 1</label>
+        </p>
+        <p>
+          <input value="p10o2" ng-model="p10o2" name="o2" type="radio" id="p10o2" />
+          <label style="font-size: 1em;" for="p10o2">Opción 2</label>
+        </p>
+        <p>
+          <input value="p10o3" ng-model="p10o3" name="o3" type="radio" id="p10o3"  />
+          <label style="font-size: 1em;" for="p10o3">Opción 3</label>
+        </p>
+        <p>
+          <input value="p10o4" ng-model="p10o4" name="o4" type="radio" id="p10o4"  />
+          <label style="font-size: 1em;" for="p10o4">Opción 4</label>
+        </p>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irTest()" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="modalResultado" class="modal">
+    <div class="modal-content">
+      <h4>{{Res.titulo}}</h4>
+      <p>{{Res.descripcion}}</p>
+      
+    </div>
+    <div class="modal-footer">
+      <button ng-click="irTest()" class=" modal-action modal-close waves-effect waves-green btn-flat">Terminar reto</button>
+    </div>
+  </div>
+
+
+
 	<audio controls autoplay>
 	  <source ng-src="{{audios}}" type="audio/mpeg">
 	Your browser does not support the audio element.

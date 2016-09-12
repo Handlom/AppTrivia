@@ -61,5 +61,16 @@ table{
 input[type="radio"]
 {
     font-size:2em;
+} 
+label
+{
+    font-size:1em;
 }
-.modal { width: 75% !important  }
+.modal { 
+	width: 75% !important;
+	font-size: 2em;
+  }
+
+.pageslider{
+	height: 600px;
+}
