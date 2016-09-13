@@ -2,6 +2,7 @@
 app.controller("generalCtrl", function($scope, $location, $timeout){
 
 	$scope.contador=10;
+	$scope.contadorP=0;
 	$scope.correctas=0;
 	$scope.saludo="Hola";  
 	$scope.audios="audio/stand.mp3";
@@ -21,218 +22,182 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		window.location.href = '#modal1';
 		//$('#modal2').openModal();
 	}
+	
 	$scope.VP1=function(p1){
-//		contador++;
+		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p1=="a") {
 			$scope.stl='animated rotateOut';
-			$timeout(function() {
-				$scope.irP2();
+			$timeout(function() {				
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP2();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	
-	$scope.irP2=function(){
-		$scope.stl='';
-		$('#modal1').closeModal();
-		$('#modal2').openModal();
-	}
+	}	
 	$scope.VP2=function(p2){
-		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p2=="b") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP3();
+				$scope.validarIda(x);			
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP3();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	$scope.irP3=function(){
-		$scope.stl='';
-		$('#modal2').closeModal();
-		$('#modal3').openModal();
 	}
 	$scope.VP3=function(p3){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p3=="c") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP4();
+				$scope.validarIda(x);
 			}, 405);
-			$scope.correctas++;	
+			
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP4();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	$scope.irP4=function(){
-		$scope.stl='';
-		$('#modal3').closeModal();
-		$('#modal4').openModal();
 	}
 	$scope.VP4=function(p4){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p4=="d") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP5();
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP5();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	$scope.irP5=function(){
-		$scope.stl='';
-		$('#modal4').closeModal();
-		$('#modal5').openModal();
 	}
 	$scope.VP5=function(p5){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p5=="a") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP6();
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP6();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	$scope.irP6=function(){
-		$scope.stl='';
-		$('#modal5').closeModal();
-		$('#modal6').openModal();
 	}
 	$scope.VP6=function(p6){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p6=="b") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP7();
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP7();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	$scope.irP7=function(){
-		$scope.stl='';
-		$('#modal6').closeModal();
-		$('#modal7').openModal();
 	}
 	$scope.VP7=function(p7){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p7=="c") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP8();
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP8();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	$scope.irP8=function(){
-		$scope.stl='';
-		$('#modal7').closeModal();
-		$('#modal8').openModal();
 	}
 	$scope.VP8=function(p8){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p8=="d") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP9();
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP9();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
-	}
-	$scope.irP9=function(){
-		$scope.stl='';
-		$('#modal8').closeModal();
-		$('#modal9').openModal();
 	}
 	$scope.VP9=function(p9){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p9=="a") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irP10();
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irP10();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
 	}
-	$scope.irP10=function(){
-		$scope.stl='';
-		$('#modal9').closeModal();
-		$('#modal10').openModal();		
-	}
 	$scope.VP10=function(p10){
 		//contador++;
+		var x = Math.floor((Math.random() * 9) + 1);
 		if (p10=="b") {
 			$scope.stl='animated rotateOut';
 			$timeout(function() {
-				$scope.irTest();
+				$scope.validarIda(x);
 			}, 405);
 			$scope.correctas++;	
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
 			$timeout(function() {
-				$scope.irTest();
+				$scope.validarIda(x);
 			}, 1250);	
 		}		
 		return $scope.stl;		
@@ -251,6 +216,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 
 	$scope.reiniciarT=function() {
 		$scope.contador=10;
+		$scope.contadorP=0;
 		$scope.correctas=0;
 	}
 
@@ -266,6 +232,158 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 
 	$scope.pageClass = 'page-about';
 	
-
+	$scope.validarIda=function (x) {
+		$scope.contadorP++;
+		if ($scope.contadorP==5) {
+			x=100;
+		}
+		console.log("x: "+x);
+		//var cerrarmodal= '#modal1';
+		var abrirmodal= '#modal'+(x+1);
+		console.log(abrirmodal);
+		switch(x) {
+		    case 1:
+				$scope.stl='';
+				$('#modal1').closeModal();
+				//$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 2:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				//$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 3:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				//$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 4:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				//$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 5:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				//$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 6:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				//$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 7:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				//$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 8:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				//$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 9:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				//$('#modal10').closeModal();
+				$(abrirmodal).openModal();
+		      	break;
+		    case 100:
+		      $scope.stl='';
+				$('#modal1').closeModal();
+				$('#modal2').closeModal();
+				$('#modal3').closeModal();
+				$('#modal4').closeModal();
+				$('#modal5').closeModal();
+				$('#modal6').closeModal();
+				$('#modal7').closeModal();
+				$('#modal8').closeModal();
+				$('#modal9').closeModal();
+				$('#modal10').closeModal();
+				$('#modalResultado').openModal();
+				$scope.irTest();
+		      	break;
+		  }
+	}
 
 });
