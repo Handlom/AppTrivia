@@ -1,17 +1,24 @@
 'use strict';
 app.controller("generalCtrl", function($scope, $location, $timeout){
 
+
+	var correcto = new Audio('audio/correct.mp3');
+	var incorrecto = new Audio('audio/incorrect.mp3');
+
 	$scope.contador=10;
 	$scope.contadorP=0;
 	$scope.correctas=0;
 	$scope.saludo="Hola";  
 	$scope.audios="audio/stand.mp3";
+
+	
 	$scope.classAnimate='animated swing';
 
 	var classIncorrect='animated wobble horizontal';
 	var classCorrect='animated wobble vertical'
 	//$scope.p1={};
 	$scope.stl='';
+	$scope.audiosT="";
 	$(document).ready(function(){
 	    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered	    
 	    $('.modal-trigger').leanModal();
@@ -26,8 +33,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP1=function(p1){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p1=="a") {
+		if (p1=="b") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {				
 				$scope.validarIda(x);
 			}, 405);
@@ -35,6 +44,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -43,8 +54,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	}	
 	$scope.VP2=function(p2){
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p2=="b") {
+		if (p2=="a") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);			
 			}, 405);
@@ -52,6 +65,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -61,8 +76,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP3=function(p3){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p3=="c") {
+		if (p3=="d") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -70,6 +87,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -79,8 +98,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP4=function(p4){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p4=="d") {
+		if (p4=="c") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -88,6 +109,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -97,8 +120,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP5=function(p5){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p5=="a") {
+		if (p5=="c") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -106,6 +131,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -115,8 +142,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP6=function(p6){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p6=="b") {
+		if (p6=="a") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -124,6 +153,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -133,8 +164,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP7=function(p7){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p7=="c") {
+		if (p7=="d") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -142,6 +175,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -151,8 +186,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP8=function(p8){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p8=="d") {
+		if (p8=="a") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -160,6 +197,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -169,8 +208,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP9=function(p9){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p9=="a") {
+		if (p9=="c") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -178,6 +219,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -187,8 +230,10 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP10=function(p10){
 		//contador++;
 		var x = Math.floor((Math.random() * 9) + 1);
-		if (p10=="b") {
+		if (p10=="a") {
 			$scope.stl='animated rotateOut';
+			correcto.currentTime=0;
+			correcto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 405);
@@ -196,6 +241,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		}
 		else {
 			$scope.stl='animated wobble horizontal';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 			$timeout(function() {
 				$scope.validarIda(x);
 			}, 1250);	
@@ -205,10 +252,14 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.irTest=function(){
 		if ($scope.correctas>=6) {
 			$scope.resTitulo='Felicidades!!!';
-			$scope.resDescripcion='Acertaste en un 60%';
+			$scope.resDescripcion='Acertaste mas de un 50%';
+			correcto.currentTime=0;
+			correcto.play();
 		}else{
 			$scope.resTitulo='Esfuerzate mas!!!';
 			$scope.resDescripcion='Acertaste menos de un 50%';
+			incorrecto.currentTime=0;
+			incorrecto.play();
 		}
 		$('#modal10').closeModal();
 		$('#modalResultado').openModal();
@@ -220,19 +271,13 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		$scope.correctas=0;
 	}
 
-	$scope.enviarp1= function(altPregunta1){
-		$scope.audios='';
-		if (altPregunta1='opcion2') {
-			$scope.audios="audio/correct.mp3";
-		}
-		else{
-			$scope.audios="audio/incorrect.mp3";
-		}
-	}
+
 
 	$scope.pageClass = 'page-about';
 	
 	$scope.validarIda=function (x) {
+		$scope.audiosT="";
+		console.log("$scope.audiosT"+$scope.audiosT);
 		$scope.contadorP++;
 		if ($scope.contadorP==5) {
 			x=100;
