@@ -489,6 +489,26 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		$scope.contador=5;
 		$scope.contadorP=0;
 		$scope.correctas=0;
+		$scope.p1='';
+		$scope.p2='';
+		$scope.p3='';
+		$scope.p4='';
+		$scope.p5='';
+		$scope.p6='';
+		$scope.p7='';
+		$scope.p8='';
+		$scope.p9='';
+		$scope.p10='';
+		$scope.p11='';
+		$scope.p12='';
+		$scope.p13='';
+		$scope.p14='';
+		$scope.p15='';
+		$scope.p16='';
+		$scope.p17='';
+		$scope.p18='';
+		$scope.p19='';
+		$scope.p20='';
 	}
 	//$scope.pageClass = 'page-about';	
 	$scope.validarIda=function (x) {
