@@ -120,7 +120,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.VP5=function(p5){
 		//contador++;
 		var x = Math.floor((Math.random() * 19) + 1);
-		if (p5=="c") {
+		if (p5=="a") {
 			$scope.stl='animated rotateOut';
 			correcto.currentTime=0;
 			correcto.play();
@@ -472,11 +472,11 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.irTest=function(){
 		if ($scope.correctas>=3) {
 			$scope.resTitulo='Felicidades!!!';
-			$scope.resDescripcion='Acertaste mas de un 50%';
+			$scope.resDescripcion='Acertaste más de un 50%';
 			correcto.currentTime=0;
 			correcto.play();
 		}else{
-			$scope.resTitulo='Esfuerzate mas!!!';
+			$scope.resTitulo='Esfuérzate más!!!';
 			$scope.resDescripcion='Acertaste menos de un 50%';
 			incorrecto.currentTime=0;
 			incorrecto.play();
