@@ -4,13 +4,13 @@
     <h4>Seleccionar "QUE COMIENCE EL RETO" para iniciar la trivia.</h4>
     <h4>Recuerda que para volver salir de la trivia solo tienes que deslizar la pantalla. Suerte!!!</h4>
     <br>
-      <button class="waves-effect waves-light btn modal-trigger blue darken-3 {{classAnimate}}" style="height:100%;-webkit-animation-iteration-count: infinite;" href="#modal1">
+      <button class="waves-effect waves-light btn blue darken-3 {{classAnimate}}" style="height:100%;-webkit-animation-iteration-count: infinite;" ng-click="iniciarReto()" >
       <h3>Que comience el reto</h3></button>
   </center>
   <br>
 
   <!-- Modal Structure -->
-  <div id="modal1" class="modal {{stl}}" ng-class="{{stl}}">
+  <div id="modal1" class="modal {{stl}} " ng-class="{{stl}}">
     <div class="modal-content">  
       <h4>¿Qué selección ocupó el tercer lugar en la Copa del Mundo de 1982?</h4>
       <p class="right">Puntaje :{{correctas}} de {{contador}}</p>

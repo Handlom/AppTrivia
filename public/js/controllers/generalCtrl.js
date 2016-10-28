@@ -1,6 +1,10 @@
 'use strict';
-app.controller("generalCtrl", function($scope, $location, $timeout){
+app.controller("generalCtrl", function($scope, $scope,$firebaseArray, $firebaseObject, $location, $timeout){
 
+
+	var refCat = firebase.database().ref("pregunta");
+	$scope.objBDTematica = $firebaseArray(refCat);
+	$scope.objTematica={};	
 
 	var correcto = new Audio('audio/correct.mp3');
 	var incorrecto = new Audio('audio/incorrect.mp3');
@@ -8,6 +12,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.contador=5;
 	$scope.contadorP=0;
 	$scope.correctas=0;
+	$scope.contadorReto=0;
 	$scope.saludo="Hola";  
 	$scope.audios="audio/stand.mp3";
 
@@ -15,21 +20,30 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 	$scope.classAnimate='animated swing';
 
 	var classIncorrect='animated wobble horizontal';
-	var classCorrect='animated wobble vertical'
+	var classCorrect='animated wobble vertical';
 	//$scope.p1={};
 	$scope.stl='';
 	$scope.audiosT="";
+
+	var objReto=[];
 	$(document).ready(function(){
 	    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered	    
-	    $('.modal-trigger').leanModal();
+	    $('.modal-trigger').leanModal({
+			  dismissible: true, // Modal can be dismissed by clicking outside of the modal
+			  opacity: .0
+			}
+		);
 	    $('.carousel.carousel-slider').carousel({full_width: true});
 
 	});
 	$scope.irP1=function(){
 		window.location.href = '#modal1';
 		//$('#modal2').openModal();
-	}
-	
+	};
+	$scope.iniciarReto=function(){
+		var x = Math.floor((Math.random() * 19) + 1);
+		$scope.validarIda(x);
+	};
 	$scope.VP1=function(p1){
 		//contador++;
 		var x = Math.floor((Math.random() * 19) + 1);
@@ -50,8 +64,8 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$scope.validarIda(x);
 			}, 1250);	
 		}		
-		return $scope.stl;		
-	}	
+		return $scope.stl;	
+	}
 	$scope.VP2=function(p2){
 		var x = Math.floor((Math.random() * 19) + 1);
 		if (p2=="a") {
@@ -482,7 +496,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 			incorrecto.play();
 		}
 		$('#modal10').closeModal();
-		$('#modalResultado').openModal();
+		$('#modalResultado').openModal({dismissible: false, opacity: 0});
 	}
 
 	$scope.reiniciarT=function() {
@@ -510,13 +524,55 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 		$scope.p19='';
 		$scope.p20='';
 	}
+	$scope.registrarJugada=function(){
+		$scope.contadorReto++;
+		if ($scope.contadorReto==1) {
+			objReto.push('respuesta1');
+		}else if($scope.contadorReto==2){
+			objReto.push('respuesta2');
+		}
+		else if($scope.contadorReto==3){
+			objReto.push('respuesta3');
+		}
+		else if($scope.contadorReto==4){
+			objReto.push('respuesta4');
+		}
+		else if($scope.contadorReto==5){
+			objReto.push('respuesta5');
+		}
+		else if($scope.contadorReto==6){
+			objReto.push('respuesta6');
+		}
+		else if($scope.contadorReto==7){
+			objReto.push('respuesta7');
+		}
+		else if($scope.contadorReto==8){
+			objReto.push('respuesta8');
+		}
+		else if($scope.contadorReto==9){
+			objReto.push('respuesta9');
+		}
+		else if($scope.contadorReto==10){
+			objReto.push('respuesta10');
+		}
+	}
 	//$scope.pageClass = 'page-about';	
 	$scope.validarIda=function (x) {
+		$(document).ready(function(){
+		    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered	    
+		    $('.modal-trigger').leanModal({
+				  dismissible: false, // Modal can be dismissed by clicking outside of the modal
+				  opacity: false
+				}
+			);
+		});
 		$scope.audiosT="";
-		$scope.contadorP++;
+		
 		if ($scope.contadorP==5) {
 			x=100;
-		}
+		};
+		console.log($scope.contadorP);
+		
 		var abrirmodal= '#modal'+(x+1);
 		switch(x) {
 		    case 1:
@@ -541,7 +597,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 2:
 		      $scope.stl='';
@@ -565,7 +621,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 3:
 		      $scope.stl='';
@@ -589,7 +645,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 4:
 		      $scope.stl='';
@@ -613,7 +669,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 5:
 		      $scope.stl='';
@@ -637,7 +693,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 6:
 		      $scope.stl='';
@@ -661,7 +717,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 7:
 		      $scope.stl='';
@@ -685,7 +741,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 8:
 		      $scope.stl='';
@@ -709,7 +765,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 9:
 		      $scope.stl='';
@@ -733,7 +789,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 10:
 		      $scope.stl='';
@@ -757,7 +813,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 11:
 		      $scope.stl='';
@@ -781,7 +837,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 12:
 		      $scope.stl='';
@@ -805,7 +861,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 13:
 		      $scope.stl='';
@@ -829,7 +885,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 14:
 		      $scope.stl='';
@@ -853,7 +909,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 15:
 		      $scope.stl='';
@@ -877,7 +933,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 16:
 		      $scope.stl='';
@@ -901,7 +957,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 17:
 		      $scope.stl='';
@@ -925,7 +981,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				//$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 18:
 		      $scope.stl='';
@@ -949,7 +1005,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				//$('#modal19').closeModal();
 				$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 19:
 		      $scope.stl='';
@@ -973,7 +1029,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$('#modal18').closeModal();
 				$('#modal19').closeModal();
 				//$('#modal20').closeModal();
-				$(abrirmodal).openModal();
+				$(abrirmodal).openModal({dismissible: false, opacity: 0});
 		      	break;
 		    case 100:
 		      $scope.stl='';
@@ -991,6 +1047,7 @@ app.controller("generalCtrl", function($scope, $location, $timeout){
 				$scope.irTest();
 		      	break;
 		  }
+		  console.log(objReto[0]);
 	}
 
 });

@@ -21,8 +21,5 @@ var app = angular.module("appTrivia", [
 })
 .run(function($rootScope, $location){
 	
-	window.oncontextmenu = function() {
-		return false;
-	}
-
+	
 });
