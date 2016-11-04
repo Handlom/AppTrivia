@@ -8,9 +8,13 @@ var app = angular.module("appTrivia", [
 .config(function ($routeProvider){
 	$routeProvider
 		.when('/', {
+			templateUrl: 'templates/login.html',
+			controller:'sesionCtrl'
+		})
+		.when('/trivia', {
 			templateUrl: 'templates/bienvenido.html',
 			controller:'generalCtrl'
-		})
+		})		
 		.when('/preguntas', {
 			templateUrl: 'templates/preguntas.html',
 			controller:'preguntasController'
