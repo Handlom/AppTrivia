@@ -10,6 +10,7 @@ app.controller("generalCtrl", function($scope,$firebaseArray, $firebaseObject, $
 	  }
 	});
 
+	orden();
 	$scope.preguntaw = Math.floor((Math.random() * 19) + 1);
 	var preguntaX=[];
 	preguntaX.push($scope.preguntaw);
@@ -107,8 +108,11 @@ app.controller("generalCtrl", function($scope,$firebaseArray, $firebaseObject, $
 						//console.log('RI, No son iguales->: '+$scope.preguntaw);
 					}
 				}
+				//$("#pre1").insertBefore("#pre3");
 			}, 700);
 			$timeout(function() {
+				//$("#pre3").insertBefore("#pre2");
+				orden();
 				$('#modalTest').openModal({dismissible: false,opacity: 0, out_duration: 600});
 			}, 800);
 
@@ -122,22 +126,17 @@ app.controller("generalCtrl", function($scope,$firebaseArray, $firebaseObject, $
 				var px = Math.floor((Math.random() * 19) + 1);
 				preguntaX.push(pw);
 				for (var i = 0; i < preguntaX.length; i++) {
-					//console.log('preguntaX[i]: '+preguntaX[i]);
-					//console.log('Nº Aleatorio : '+px);
 					if (px==preguntaX[i]) {
-						//console.log('Nº actual: '+preguntaX[i]);
 						px = Math.floor((Math.random() * 19) + 1);						
 						$scope.preguntaw=px;
-						//console.log('px nuevo numero: '+px);
-						//console.log('RI, Iguales->Nº aleatorio nuevo: '+$scope.preguntaw);
 						break;
 					}else{
 						$scope.preguntaw=px;
-						//console.log('RI, No son iguales->: '+$scope.preguntaw);
 					}
 				}
 			}, 700);
 			$timeout(function() {
+				orden();
 				$('#modalTest').openModal({dismissible: false,opacity: 0, out_duration: 600});
 			}, 800);
 		}
@@ -159,6 +158,7 @@ app.controller("generalCtrl", function($scope,$firebaseArray, $firebaseObject, $
 			$scope.resDescripcion='Acertaste '+$scope.correctas+' de '+ $scope.contador;
 		}
 		$timeout(function() {
+
 				$('#modalResultado').openModal({dismissible: false, opacity: 0});
 			}, 800);
 	};
@@ -205,6 +205,24 @@ app.controller("generalCtrl", function($scope,$firebaseArray, $firebaseObject, $
 	        ,1000);
     };
 
-    
-	
+    function orden(){
+    	var z = Math.floor((Math.random() * 4) + 1);
+    	console.log('z: '+z);
+    	switch(z) {
+		    case 1:
+		        $("#pre3").insertBefore("#pre1");
+		        break;
+		    case 2:
+		        $("#pre3").insertBefore("#pre2");
+		        break;
+		    case 3:
+		        $("#pre3").insertBefore("#pre3");
+		        break;
+		    case 4:
+		        $("#pre3").insertAfter("#pre4");
+		        break;
+		    default:
+		       $("#pre3").insertBefore("#pre1");
+		}
+    };	
 });

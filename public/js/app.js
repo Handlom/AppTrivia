@@ -15,10 +15,6 @@ var app = angular.module("appTrivia", [
 			templateUrl: 'templates/bienvenido.html',
 			controller:'generalCtrl'
 		})		
-		.when('/preguntas', {
-			templateUrl: 'templates/preguntas.html',
-			controller:'preguntasController'
-		})
 		.otherwise({
 			redirectTo: '/'
 		});

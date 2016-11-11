@@ -18,21 +18,21 @@
       <h4>{{numPregunta}}. {{pre.enunciado}}</h4><div style="height: 10px;"></div>
       <center class="right purple darken-3" style="color: white; width: 30%;">Puntaje :{{correctas}} de {{contador}}</center>
       <div style="height: 10px;"></div>
-      <p>Seleccione una opción:</p>
+      <p>Seleccione una opción:</p><button ng-click="ordenn()">orden</button>
       <form>
-        <p>
+        <p id="pre1">
           <input value="{{pre.alternativa1}}" ng-model="p1" name="p1" type="radio" id="p1o1" />
           <label style="font-size: 1em;" for="p1o1">{{pre.alternativa1}}</label>
         </p>
-        <p>
+        <p id="pre2">
           <input value="{{pre.alternativa2}}" ng-model="p1" name="p1" type="radio" id="p1o2" />
           <label style="font-size: 1em;" for="p1o2">{{pre.alternativa2}}</label>
         </p>
-        <p>
+        <p id="pre3">
           <input value="{{pre.respuesta}}" ng-model="p1" name="p1" type="radio" id="p1o3"  />
           <label style="font-size: 1em;" for="p1o3">{{pre.respuesta}}</label>
         </p>
-        <p>
+        <p id="pre4">
           <input value="{{pre.alternativa3}}" ng-model="p1" name="p1" type="radio" id="p1o4"  />
           <label style="font-size: 1em;" for="p1o4">{{pre.alternativa3}}</label>
         </p>
